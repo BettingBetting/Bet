@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Title</title>
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/perfect-scrollbar.jquery.min.js"></script>
+
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    <script src="js/odds-formating.js"></script>
+    <script src="js/work-with-data-ref.js"></script>
+    <script src="js/bet-slip.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+</head>
+
+<body class="wrapper-outer">
+    <div class="wrapper">
+        <div class="header-wrapper">
+            <header>
+                <a href="#" class="logo">Premier <span>betting</span></a>
+                <div class="header-user">
+                    <div class="user-logged">
+                        <a href="#" class="logout">Logout</a>
+                        <div class="profile-greeting">Hi, Dmitry</div>
+                        <a href="#" class="logged-arrow">
+                            <div class="last-win-wrapper">
+                                <div class="last-win-container">
+                                    <div class="last-win-header">Last win</div>
+                                    <div class="logged-cash-content">10,25 EUR</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="logged-balance-header">Balance</a>
+                        <div class="logged-cash-content">100,25 EUR</div>
+                    </div>
+                    <!--
+                    <div class="header-user-register">
+                        <a href="#" class="register-name">Register</a>
+                        <form action="#" method="POST" class="header-register">
+                            <div class="header-register-top">
+                                <input type="text" class="header-user-input" name="username" placeholder="Username">
+                                <input type="password" class="header-user-input" name="password" placeholder="Password">
+                                <button>GO</button>
+                            </div>
+                            <div class="header-register-bottom">
+                                <div class="header-register-remember">
+                                    <input type="checkbox" id="header-remember">
+                                    <label class="fake-checkbox" for="header-remember"></label>
+                                    <label class="header-register-remember-text" for="header-remember">Remember me</label>
+                                </div>
+                                <a href="#" class="header-register-lost-password">Lost password</a>
+                            </div>
+                        </form>
+                    </div>
+        -->
+                </div>
+            </header>
+            <ul class="tabs-list">
+                <li class="tab active"><a href="#"><span>SPORT</span></a></li>
+                <li class="tab"><a href="#"><span>RESULT</span></a></li>
+                <li class="tab"><a href="#"><span>NEWS</span></a></li>
+                <li class="tab"><a href="#"><span>ABOUT US</span></a></li>
+                <li class="tab"><a href="#"><span>MY PROFILE</span></a></li>
+            </ul>
+        </div>
+        <section>
+            <div class="content">
+                <aside class="sidebar-left">
+                    <div class="place-info">
+                        <div class="language">
+                            <div class="current-language">
+                                <img src="img/flag-english.png" alt="" class="language-flag">
+                                <img src="img/arrow-white-down.png" alt="" class="arrow-down">
+                            </div>
+
+                            <div class="languages-list-wrapper">
+                                <ul class="languages-list">
+                                    <li>
+                                        <a href="#" class="language-item active">
+                                            <img src="img/flag-english.png" alt="" class="language-icon">
+                                            <span class="language-name">English</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="language-item">
+                                            <img src="img/flag-german.png" alt="" class="language-icon">
+                                            <span class="language-name">German</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="language-item">
+                                            <img src="img/flag-french.png" alt="" class="language-icon">
+                                            <span class="language-name">French</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="language-item">
+                                            <img src="img/flag-italian.png" alt="" class="language-icon">
+                                            <span class="language-name">Italian</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="language-item">
+                                            <img src="img/flag-turkish.png" alt="" class="language-icon">
+                                            <span class="language-name">Turkish</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="language-item">
+                                            <img src="img/flag-bulgarian.png" alt="" class="language-icon">
+                                            <span class="language-name">Bulgarian</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="language-item">
+                                            <img src="img/flag-spanish.png" alt="" class="language-icon">
+                                            <span class="language-name">Spanish</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="language-item">
+                                            <img src="img/flag-polish.png" alt="" class="language-icon">
+                                            <span class="language-name">Polish</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+
+                        </div>
+                        <div class="time">20/08/20156:56&nbsp;&nbsp;PM&nbsp;GMT&nbsp;+2</div>
+                    </div>
+                    <div class="sidebar-left-tabs">
+                        <a href="#" class="sidebar-tab-sport">SPORT</a>
+                        <a href="#" class="sidebar-tab-live active">LIVE BETTING</a>
+                    </div>
+
+                    <ul class="sidebar-left-sports-list sidebar-live">
+                        <li class="sidebar-left-sports-item" id="soccer-left-side-bar">
+                            <div class="sports-item-header" id="soccer-left-item-header">
+                                <img src="img/soccer-icon.png" alt="" class="sports-icon soccer">
+                                <div class="sports-name">Soccer</div>
+                                <div class="sports-item-badge" id="soccer-matches-count"></div>
+                                <img src="img/sports-arrow.svg" alt="" class="sports-arrow">
+                            </div>
+                            <ul class="sports-item-countries-list" id="soccer-countries-list">
+                            </ul>
+                        </li>
+                        <li class="sidebar-left-sports-item" id="tennis-left-side-bar">
+                            <div class="sports-item-header" id="tennis-left-item-header">
+                                <img src="img/tennis-icon.png" alt="" class="sports-icon soccer">
+                                <div class="sports-name">Tennis</div>
+                                <div class="sports-item-badge" id="tennis-matches-count"></div>
+                                <img src="img/sports-arrow.svg" alt="" class="sports-arrow">
+                            </div>
+                            <ul class="sports-item-countries-list" id="tennis-countries-list">
+                            </ul>
+                        </li>
+                        <li class="sidebar-left-sports-item" id="basketball-left-side-bar" >
+                            <div class="sports-item-header" id="basketball-left-item-header">
+                                <img src="img/basketball-icon.png" alt="" class="sports-icon soccer">
+                                <div class="sports-name">Basketball</div>
+                                <div class="sports-item-badge" id="basketball-matches-count"></div>
+                                <img src="img/sports-arrow.svg" alt="" class="sports-arrow">
+                            </div>
+                            <ul class="sports-item-countries-list" id="basketball-countries-list">
+                            </ul>
+                        </li>
+                        <li class="sidebar-left-sports-item" id="icehockey-left-side-bar" >
+                            <div class="sports-item-header" id="icehockey-left-item-header">
+                                <img src="img/icehockey-icon.png" alt="" class="sports-icon soccer">
+                                <div class="sports-name">Ice Hockey</div>
+                                <div class="sports-item-badge" id="icehockey-matches-count"></div>
+                                <img src="img/sports-arrow.svg" alt="" class="sports-arrow">
+                            </div>
+                            <ul class="sports-item-countries-list" id="icehockey-countries-list">
+                            </ul>
+                        </li>
+                        <li class="sidebar-left-sports-item" id="handball-left-side-bar" >
+                            <div class="sports-item-header" id="handball-left-item-header">
+                                <img src="img/handball-icon.png" alt="" class="sports-icon soccer">
+                                <div class="sports-name">Handball</div>
+                                <div class="sports-item-badge" id="handball-matches-count"></div>
+                                <img src="img/sports-arrow.svg" alt="" class="sports-arrow">
+                            </div>
+                            <ul class="sports-item-countries-list" id="handball-countries-list">
+                            </ul>
+                        </li>
+                        <li class="sidebar-left-sports-item" id="volleyball-left-side-bar" >
+                            <div class="sports-item-header" id="volleyball-left-item-header">
+                                <img src="img/volleyball-icon.png" alt="" class="sports-icon soccer">
+                                <div class="sports-name">Volleyball</div>
+                                <div class="sports-item-badge" id="volleyball-matches-count"></div>
+                                <img src="img/sports-arrow.svg" alt="" class="sports-arrow">
+                            </div>
+                            <ul class="sports-item-countries-list" id="volleyball-countries-list">
+                            </ul>
+                        </li>
+                        <li class="sidebar-left-sports-item" id="rugby-left-side-bar" >
+                            <div class="sports-item-header" id="rugby-left-item-header">
+                                <img src="img/rugby-icon.png" alt="" class="sports-icon soccer">
+                                <div class="sports-name">Rugby</div>
+                                <div class="sports-item-badge" id="rugby-matches-count"></div>
+                                <img src="img/sports-arrow.svg" alt="" class="sports-arrow">
+                            </div>
+                            <ul class="sports-item-countries-list" id="rugby-countries-list">
+                            </ul>
+                        </li>
+                    </ul>
+
+                </aside>
+                <div class="content-center">
+                    <div class="content-center-header">
+                        <div class="markets-header">SELECT MARKETS</div>
+                        <div class="search-wrapper">
+                            <form action="#" method="get" class="search-container">
+                                <input type="text" placeholder="Search" class="search-input">
+                                <button class="search-button"></button>
+                            </form>
+                            <div class="search-button"></div>
+                            <!--
+                                                            <div class="search-form-wrapper">
+                                                                <form action="#" method="get" class="search-container">
+                                                                    <input type="text" placeholder="Search" class="search-input">
+                                                                    <button class="search-button"></button>
+                                                                </form>
+                                                            </div>
+                            -->
+                        </div>
+                    </div>
+                    <div class="content-center-main" paddi>
+                        <div class="center-sports-header" id="soccer-header">
+                            <img src="img/soccer-icon-center.png" alt="" class="center-sports-icon soccer">
+                            <div class="center-sports-header-name">Soccer</div>
+                            <div id="soccer_CenterBtn" class="center-sports-button"></div>
+                        </div>
+                        <div id="soccer-content-container" class="content-stats"></div>
+
+                        <div class="center-sports-header" id="tennis-header">
+                            <img src="img/tennis-icon.png" alt="" class="center-sports-icon soccer">
+                            <div class="center-sports-header-name">Tennis</div>
+                            <div id="tennis_CenterBtn" class="center-sports-button"></div>
+                        </div>
+                        <div id="tennis-content-container" class="content-stats" hidden></div>
+
+                        <div class="center-sports-header" id="basketball-header">
+                            <img src="img/basketball-icon.png" alt="" class="center-sports-icon soccer">
+                            <div class="center-sports-header-name">Basketball</div>
+                            <div id="basketball_CenterBtn" class="center-sports-button"></div>
+                        </div>
+                        <div id="basketball-content-container" class="content-stats" hidden></div>
+
+                        <div class="center-sports-header" id="icehockey-header">
+                            <img src="img/icehockey-icon.png" alt="" class="center-sports-icon soccer">
+                            <div class="center-sports-header-name">Ice Hockey</div>
+                            <div id="icehockey_CenterBtn" class="center-sports-button"></div>
+                        </div>
+                        <div id="icehockey-content-container" class="content-stats" hidden></div>
+
+                        <div class="center-sports-header" id="handball-header">
+                            <img src="img/handball-icon.png" alt="" class="center-sports-icon soccer">
+                            <div class="center-sports-header-name">Handball</div>
+                            <div id="handball_CenterBtn" class="center-sports-button"></div>
+                        </div>
+                        <div id="handball-content-container" class="content-stats" hidden></div>
+
+                        <div class="center-sports-header" id="volleyball-header">
+                            <img src="img/volleyball-icon.png" alt="" class="center-sports-icon soccer">
+                            <div class="center-sports-header-name">Volleyball</div>
+                            <div id="volleyball_CenterBtn" class="center-sports-button"></div>
+                        </div>
+                        <div id="volleyball-content-container" class="content-stats" hidden></div>
+
+                        <div class="center-sports-header" id="rugby-header">
+                            <img src="img/rugby-icon.png" alt="" class="center-sports-icon soccer">
+                            <div class="center-sports-header-name">Rugby</div>
+                            <div id="rugby_CenterBtn" class="center-sports-button"></div>
+                        </div>
+                        <div id="rugby-content-container" class="content-stats" hidden></div>
+
+                    </div>
+
+
+
+
+
+
+                    <div class="content-center-details">
+                        <div class="details-header">
+                            <a href="#" class="details-back"></a>
+                            <img src="img/soccer-icon-2.png" alt="" class="details-sport-icon">
+                            <div class="details-term">2-nd half</div>
+                            <div class="details-header-content">Spain - La Liga: Futures</div>
+                            <div class="score">3:1 <span>(1:0)</span></div>
+                        </div>
+                        <div class="details-info-top">
+                            <div class="cards-1">
+                                <!-- <div class="card red"></div>-->
+                            </div>
+                            <div class="cards-2">
+                               <!--   <div class="card red"></div>
+                                <div class="card red"></div>-->
+                            </div>
+                            <div class="match-time">87 min</div>
+                        </div>
+
+
+                        <table class="details-bets-table">
+
+                            <tr class="details-bet-item">
+                                <td class="details-bet-item-header">Match bet</td>
+                                <td>
+                                    <div class="stats-table-result-top">1</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>3.10</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">x</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>1.75</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">2</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>4.70</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+
+
+
+
+                            <tr class="details-bet-item">
+                                <td class="details-bet-item-header">Halfline-Match bet</td>
+                                <td>
+                                    <div class="stats-table-result-top">1</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>3.10</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">x</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>1.75</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">2</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>4.70</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+
+
+                            <tr class="details-bet-item">
+                                <td class="details-bet-item-header">Next goal</td>
+                                <td>
+                                    <div class="stats-table-result-top">1</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>1.75</span>
+                                        <img src="img/arrow-green.svg" alt="" class="stats-arrow up">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">x</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>1.75</span>
+                                        <img src="img/arrow-red.svg" alt="" class="stats-arrow down">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">2</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>4.70</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+
+
+                            <tr class="details-bet-item">
+                                <td class="details-bet-item-header">Winner rest of first period</td>
+                                <td>
+                                    <div class="stats-table-result-top">1</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>1.75</span>
+                                        <img src="img/arrow-green.svg" alt="" class="stats-arrow up">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">x</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>1.75</span>
+                                        <img src="img/arrow-red.svg" alt="" class="stats-arrow down">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">2</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>4.70</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+
+                            <tr class="details-bet-item">
+                                <td colspan="2" class="details-bet-item-header">Total 1st period (2.5)</td>
+                                <td>
+                                    <div class="stats-table-result-top">Under</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>1.75</span>
+                                        <img src="img/arrow-red.svg" alt="" class="stats-arrow down">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">Over</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>4.70</span>
+                                        <img src="img/arrow-green.svg" alt="" class="stats-arrow up">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="details-bet-item">
+                                <td class="details-bet-item-header">Winner rest of the match</td>
+                                <td>
+                                    <div class="stats-table-result-top">1</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>3.10</span>
+                                        <img src="img/arrow-green.svg" alt="" class="stats-arrow up">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">x</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>1.75</span>
+                                        <img src="img/arrow-red.svg" alt="" class="stats-arrow down">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">2</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>4.70</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                            <tr class="details-bet-item">
+                                <td colspan="2" class="details-bet-item-header">Total (4.5)</td>
+                                <td>
+                                    <div class="stats-table-result-top">Under</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>1.75</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">Over</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>4.70</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+
+                            <tr class="details-bet-item">
+                                <td colspan="2" class="details-bet-item-header">Total (3.5)</td>
+                                <td>
+                                    <div class="stats-table-result-top">Under</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>1.75</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">Over</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>4.70</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                            <tr class="details-bet-item">
+                                <td colspan="2" class="details-bet-item-header">Total (5.5)</td>
+                                <td>
+                                    <div class="stats-table-result-top">Under</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>1.75</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">Over</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>4.70</span>
+                                        <img src="img/arrow-green.svg" alt="" class="stats-arrow up">
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                            <tr class="details-bet-item">
+                                <td colspan="2" class="details-bet-item-header">Total 1st period (1.5)</td>
+                                <td>
+                                    <div class="stats-table-result-top">Under</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>1.75</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="stats-table-result-top">Over</div>
+                                    <div class="stats-table-result-bottom">
+                                        <span>4.70</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <aside class="sidebar-right">
+                    <div class="bet-slip">
+                        <div class="bet-slip-header">BET SLIP<span class="bet-slip-header-button"></span></div>
+
+                        <div class="bet-slip-wrapper">
+                            <ul class="bet-slip-menu">
+                                <li id="bsSingleBtn" class="bet-slip-menu-item single  hidden "><span>Single</span></li>
+                                <li id="bsMultipleBtn" class="bet-slip-menu-item multiple hidden" ><span>Multiple</span></li>
+                                <li id="bsSystemBtn" class="bet-slip-menu-item submenu-header system hidden" >
+                                    <span>System</span>
+                                    <ul class="bet-slip-menu-item-submenu">
+                                        <li><a href="#">System 2/9</a></li>
+                                        <li><a href="#">System 3/9</a></li>
+                                        <li><a href="#">System 4/9</a></li>
+                                        <li><a href="#">System 5/9</a></li>
+                                        <li><a href="#">System 6/9</a></li>
+                                        <li><a href="#">System 7/9</a></li>
+                                        <li><a href="#">System 8/9</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="bet-slip-not-start">Select outcomes to place your bet</div>
+                            <div class="bet-slip-single">
+
+
+                                <div class="bet-slip-checkboxes">
+                                    <div class="bet-slip-checkbox-wrapper">
+                                        <input type="checkbox" id="single-advanced" class="hidden-checkbox">
+                                        <label class="bet-slip-fake-checkbox" for="single-advanced"></label>
+                                        <label class="bet-slip-label-text" for="single-advanced">Advanced</label>
+                                    </div>
+                                    <div class="bet-slip-checkbox-wrapper">
+                                        <input type="checkbox" id="single-same-stake" class="hidden-checkbox">
+                                        <label class="bet-slip-fake-checkbox" for="single-same-stake"></label>
+                                        <label class="bet-slip-label-text" for="single-same-stake">Same Stake</label>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="bet-slip-content">
+                                    <form action="#" id="bsSingleForm" class="bet-slip-form">
+                                        <div class="bet-slip-bottom">
+                                            <div class="bet-slip-bottom-main">
+                                                <div class="bet-slip-overall hidden">
+                                                    <div class="bet-slip-overall-item">
+                                                        <div class="bet-slip-overall-item-title">Min Bet</div>
+                                                        <div class="bet-slip-overall-item-content">1.00 $</div>
+                                                    </div>
+                                                    <div class="bet-slip-overall-item">
+                                                        <div class="bet-slip-overall-item-title">Max Bet</div>
+                                                        <div class="bet-slip-overall-item-content">123.45 $</div>
+                                                    </div>
+                                                    <div class="bet-slip-overall-item">
+                                                        <div class="bet-slip-overall-item-title">Max Win</div>
+                                                        <div class="bet-slip-overall-item-content">1000.00 $</div>
+                                                    </div>
+                                                </div>
+                                                <div class="bet-slip-bottom-stake hidden">
+                                                    <div class="bet-slip-bottom-stake-name">Stake</div>
+                                                    <input type="text" value="10.00" class="bet-slip-bottom-stake-input">
+                                                </div>
+                                                <button class="bet-slip-button">Place Bets</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="bet-slip-multiple">
+                                <div class="bet-slip-checkboxes">
+                                    <div class="bet-slip-checkbox-wrapper">
+                                        <input type="checkbox" id="multiple-advanced" class="hidden-checkbox">
+                                        <label class="bet-slip-fake-checkbox" for="multiple-advanced"></label>
+                                        <label class="bet-slip-label-text" for="multiple-advanced">Advanced</label>
+                                    </div>
+                                </div>
+                                <div class="bet-slip-content">
+                                    <form action="#" class="bet-slip-form" id="bsMultipleForm">
+                                        <div class="bet-slip-bottom">
+                                            <div class="bet-slip-bottom-top">
+                                                <div class="bet-slip-bonus">Bonus 300$</div>
+                                                <div class="bet-slip-odds">Odds: 30</div>
+                                                <div class="bet-slip-possible-win">Possible win: 300 $</div>
+                                            </div>
+                                            <div class="bet-slip-bottom-main">
+                                                <div class="bet-slip-overall hidden">
+                                                    <div class="bet-slip-overall-item">
+                                                        <div class="bet-slip-overall-item-title">Min Bet</div>
+                                                        <div class="bet-slip-overall-item-content">1.00 $</div>
+                                                    </div>
+                                                    <div class="bet-slip-overall-item">
+                                                        <div class="bet-slip-overall-item-title">Max Bet</div>
+                                                        <div class="bet-slip-overall-item-content">123.45 $</div>
+                                                    </div>
+                                                    <div class="bet-slip-overall-item">
+                                                        <div class="bet-slip-overall-item-title">Max Win</div>
+                                                        <div class="bet-slip-overall-item-content">1000.00 $</div>
+                                                    </div>
+                                                </div>
+                                                <div class="bet-slip-bottom-stake">
+                                                    <div class="bet-slip-bottom-stake-name">Stake</div>
+                                                    <input type="text" value="10.00" class="bet-slip-bottom-stake-input">
+                                                </div>
+                                                <button class="bet-slip-button">Place Bets</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="bet-slip-system">
+                                <div class="bet-slip-checkboxes">
+                                    <div class="bet-slip-checkbox-wrapper">
+                                        <input type="checkbox" id="system-advanced" class="hidden-checkbox">
+                                        <label class="bet-slip-fake-checkbox" for="system-advanced"></label>
+                                        <label class="bet-slip-label-text" for="system-advanced">Advanced</label>
+                                    </div>
+                                    <div class="bet-slip-checkbox-wrapper">
+                                        <input type="checkbox" id="system-bankers" class="hidden-checkbox">
+                                        <label class="bet-slip-fake-checkbox" for="system-bankers"></label>
+                                        <label class="bet-slip-label-text" for="system-bankers">Bankers</label>
+                                    </div>
+                                </div>
+                                <div class="bet-slip-content">
+                                    <form action="#" class="bet-slip-form" id="bsSystemForm">
+                                        <div class="bet-slip-bottom">
+                                            <div class="bet-slip-bottom-top">
+                                                <div class="bet-slip-bonus">Bonus 300$</div>
+                                                <div class="bet-slip-odds">Odds: 30</div>
+                                                <div class="bet-slip-possible-win">Possible win: 300 $</div>
+                                            </div>
+                                            <div class="bet-slip-bottom-main">
+                                                <div class="bet-slip-overall hidden">
+                                                    <div class="bet-slip-overall-item">
+                                                        <div class="bet-slip-overall-item-title">Min Bet</div>
+                                                        <div class="bet-slip-overall-item-content">1.00 $</div>
+                                                    </div>
+                                                    <div class="bet-slip-overall-item">
+                                                        <div class="bet-slip-overall-item-title">Max Bet</div>
+                                                        <div class="bet-slip-overall-item-content">123.45 $</div>
+                                                    </div>
+                                                    <div class="bet-slip-overall-item">
+                                                        <div class="bet-slip-overall-item-title">Max Win</div>
+                                                        <div class="bet-slip-overall-item-content">1000.00 $</div>
+                                                    </div>
+                                                </div>
+                                                <div class="bet-slip-bottom-stake">
+                                                    <div class="bet-slip-bottom-stake-name">Stake</div>
+                                                    <input type="text" value="10.00" class="bet-slip-bottom-stake-input">
+                                                </div>
+                                                <button class="bet-slip-button">Place Bets</button>
+                                            </div>
+                                            <div class="bet-slip-limit-message">You have exceeded total odds limits</div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="popular">
+                        <div class="popular-header">POPULAR</div>
+                        <div class="popular-content">
+                            <div class="popular-content-item">
+                                <div class="popular-item-left">
+                                    <div class="popular-item-left-top red">87 min</div>
+                                    <div class="popular-item-left-bottom red">2-nd half</div>
+                                </div>
+                                <div class="popular-item-content">Spain - La Liga: Futures</div>
+                            </div>
+                            <div class="popular-content-item">
+                                <div class="popular-item-left">
+                                    <div class="popular-item-left-top yellow">45 min</div>
+                                    <div class="popular-item-left-bottom yellow">break</div>
+                                </div>
+                                <div class="popular-item-content">Spain - La Liga: Futures</div>
+                            </div>
+                            <div class="popular-content-item">
+                                <div class="popular-item-left">
+                                    <div class="popular-item-left-top green">22 min</div>
+                                    <div class="popular-item-left-bottom green">first half</div>
+                                </div>
+                                <div class="popular-item-content">Spain - La Liga: Futures</div>
+                            </div>
+                            <div class="popular-content-item">
+                                <div class="popular-item-left">
+                                    <div class="popular-item-left-top black">87 min</div>
+                                    <div class="popular-item-left-bottom black">pause</div>
+                                </div>
+                                <div class="popular-item-content">Spain - La Liga: Futures</div>
+                            </div>
+                            <div class="popular-content-item">
+                                <div class="popular-item-left">
+                                    <div class="popular-item-left-top blue">15 min</div>
+                                    <div class="popular-item-left-bottom light-gray">16.00</div>
+                                </div>
+                                <div class="popular-item-content">Spain - La Liga: Futures</div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-wrapper">
+                <ul class="footer-links-list">
+                    <li><a href="#" class="footer-link">License agreement</a></li>
+                    <li><a href="#" class="footer-link">Product usage terms</a></li>
+                    <li><a href="#" class="footer-link">Sport Betting rules</a></li>
+                    <li><a href="#" class="footer-link">Responsible Gaming Information</a></li>
+                    <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="#" class="footer-link">Legal Information</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+        
+</body>
+
+</html>
