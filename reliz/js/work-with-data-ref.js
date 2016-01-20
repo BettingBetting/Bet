@@ -54,7 +54,7 @@ function onMessage(event) {
     if (onMessage.counter === undefined) {
         onMessage.counter = 0;
         onInitMessageHandler(event);
-        onUpdateMessageHandler(event);
+       onUpdateMessageHandler(event);
 	}
 	else{
         onUpdateMessageHandler(event);
@@ -184,9 +184,8 @@ function removeMatch(match){
     if(bsSingleList[match.matchid] !== undefined){
         removeSingleBsItemFromList(match.matchid);
     }
+
 }
-
-
 
 
 //show match content and table
@@ -216,11 +215,10 @@ function makeContentWithTable(match){
     try{
         /**********************************************************/
 
-        if( status=="Stopped"){
+        if( status=="Stopped" && periodinfo != 'Paused'){
          var   color_class="";
             color_class='gray';
         } else {
-
             if (periodinfo == "Not Started" || status == 'NotStarted') {
                 color_class = "";
                 color_class = 'red';
@@ -246,10 +244,14 @@ function makeContentWithTable(match){
     /*****************************************************************************************/
     statsItemInfoBottomDiv.setAttribute("class", "stats-item-info-bottom");
 
+    /*if(status!="Stopped") {
+        console.log(status);
+    }*/
 
 
-    if(status!="Stopped" ) {
+    if(status!="Stopped") {
         if(sportName != "tennis" && sportName != "volleyball"){
+
             statsItemInfoTopDiv.innerHTML = matchminute + "<br> min";
             statsItemInfoBottomDiv.innerHTML = periodinfo
         }else{
@@ -266,7 +268,7 @@ function makeContentWithTable(match){
         if(periodinfo != 'Paused') {
             if (sportName != "tennis" && sportName != "volleyball") {
                 statsItemInfoTopDiv.innerHTML = matchminute + "<br> min";
-                statsItemInfoBottomDiv.innerHTML = "Stopped" + "<br>" + periodinfo;
+                statsItemInfoBottomDiv.innerHTML ="Stopped" + "<br>" + periodinfo;
             } else {
                 statsItemInfoTopDiv.innerHTML = "Set";
                 statsItemInfoBottomDiv.innerHTML = "Stopped"
@@ -399,11 +401,6 @@ function addColumn(table, odd, oddPos, sportName, matchid, isDeletedOdd){
         }
 
 }
-
-
-
-
-
 
 
 
@@ -592,25 +589,29 @@ function sortCountriesList(sportName){
 
 
 
-
-
-function sortAndShow(sportName, sportContainer){
-    var  matchList = [];
-    for(matchid in sportList[sportName]){
+function sortAndShow(sportName, sportContainer) {
+    var matchList = [];
+    for (matchid in sportList[sportName]) {
         var match = sportList[sportName][matchid];
+        /*   if(match.status === "Stopped"){
+         return;
+         }*/
         //show if country in filter
-        if(countrySportFilter[match.sportdescriptor] !== undefined && countrySportFilter[match.sportdescriptor].count > 0 && countrySportFilter[match.sportdescriptor][match.country.replace(/\s/g, '')] === undefined ){
-        }else{
+        if (countrySportFilter[match.sportdescriptor] !== undefined && countrySportFilter[match.sportdescriptor].count > 0 && countrySportFilter[match.sportdescriptor][match.country.replace(/\s/g, '')] === undefined) {
+        } else {
             matchList.push(match);
         }
     }
-    matchList.sort(function (a, b) {
-          var contentA = a.matchminute;
-          var contentB = b.matchminute;
 
-        if(a.sportdescriptor != tennisSportName || a.sportdescriptor != volleyballSportName) {
+    if (match.status != "Stopped") {
 
-            if (contentA > contentB && contentA - contentB <1) {
+        matchList.sort(function (a, b) {
+        var contentA = a.matchminute;
+        var contentB = b.matchminute;
+
+        if (a.sportdescriptor != tennisSportName || a.sportdescriptor != volleyballSportName) {
+
+            if (contentA > contentB && contentA - contentB < 1) {
                 contentA = "";
                 contentB = "";
             }
@@ -619,37 +620,41 @@ function sortAndShow(sportName, sportContainer){
                 contentA = "";
                 contentB = "";
             }
-            if (contentB ==contentA ) {
+            if (contentB == contentA) {
                 contentA = a.matchminute;
                 contentB = b.matchminute;
             }
-        }
-        if(contentA === "Not" || contentA === "Paused" || contentA === "Not Started") {
-            contentA = "";
-        }
-        if(contentB == "Not" || contentB === "Paused" || contentB === "Not Started") {
-            contentB = "";
+            if (contentA === "Not" || contentA === "Paused" || contentA === "Not Started") {
+                contentA = "";
+            }
+            if (contentB == "Not" || contentB === "Paused" || contentB === "Not Started") {
+                contentB = "";
+            }
+            return (contentA > contentB) ? -1 : (contentA < contentB) ? 1 : 0;
+        } else {
+
+            if (a.sportdescriptor === tennisSportName || a.sportdescriptor === volleyballSportName) {
+                var contentA = a.periodinfo;
+                var contentB = b.periodinfo;
+
+            }
+
+            if (a.sportdescriptor === tennisSportName || a.sportdescriptor === volleyballSportName) {
+
+
+                if (contentA === "Not" || contentA === "Paused" || contentA === "Not Started") {
+                    contentA = "";
+                }
+                if (contentB == "Not" || contentB === "Paused" || contentB === "Not Started") {
+                    contentB = "";
+                }
+            }
+            return (contentA > contentB) ? -1 : (contentA < contentB) ? 1 : 0;
         }
 
-          return (contentA > contentB) ? -1 : (contentA < contentB) ? 1 : 0;
 
     });
-
-    matchList.sort(function (a, b) {
-    if(a.sportdescriptor === tennisSportName || a.sportdescriptor === volleyballSportName){
-        var contentA = a.periodinfo;
-        var contentB = b.periodinfo;
-
-    }
-    if(contentA === "Not" || contentA === "Paused" || contentA === "Not Started") {
-        contentA = "";
-    }
-    if(contentB == "Not" || contentB === "Paused" || contentB === "Not Started") {
-        contentB = "";
-    }
-        return (contentA > contentB) ? -1 : (contentA < contentB) ? 1 : 0;
-
-    });
+}
 
 
 
@@ -683,6 +688,8 @@ function ColorStatsItemInfo(sportName, periodinfo, matchminute, score) {
             }
             break;
 
+
+
         case tennisSportName:
             color = 'green';
             var ScoreClearString = score.split(' ')[1];
@@ -695,6 +702,7 @@ function ColorStatsItemInfo(sportName, periodinfo, matchminute, score) {
                     }
                 }
             }
+
             for (var i = 0; i < IntSoccerElements.length; i++) {
                 var   IntSoccerElem=IntSoccerElements[IntSoccerElements.length-1];
                 var IntSoccerElem1 = parseInt(IntSoccerElem.split(':')[1]);
@@ -719,14 +727,21 @@ function ColorStatsItemInfo(sportName, periodinfo, matchminute, score) {
             if( ScoreClearString2=="0:0" && IntSoccerElem1==" " || ScoreClearString2=="0:0" && IntSoccerElem2==" " ){
                 color = 'green';
             }
-            if( ScoreClearString2=="0:0"){
+            /*if( ScoreClearString2=="0:0"){
                 color = 'green';
-            }
+            }*/
+
+
+
             if (periodinfo == 'Not Started') {
                 color="";
                 color = 'red';
             }
             break;
+
+
+
+
         case soccerSportName:
             if (matchminute > 29 && matchminute < 46) {
                 color = 'red';
@@ -782,6 +797,12 @@ function ColorStatsItemInfo(sportName, periodinfo, matchminute, score) {
                 color = 'red';
             }
             break;
+
+
+
+
+
+
         case icehockeySportName :
             if (matchminute > 14 && matchminute < 21) {
                 color = 'red';
@@ -796,6 +817,9 @@ function ColorStatsItemInfo(sportName, periodinfo, matchminute, score) {
                 color = 'green';
             }
             break;
+
+
+
         case handballSportName :
             if (matchminute > 24 && matchminute < 31) {
                 color = 'red';
@@ -807,6 +831,10 @@ function ColorStatsItemInfo(sportName, periodinfo, matchminute, score) {
                 color = 'green';
             }
             break;
+
+
+
+
         case rugbySportName :
             if (matchminute > 29 && matchminute < 41) {
                 color = 'red';
@@ -990,8 +1018,6 @@ function getUrlImgSport(sportName) {
 
 function oddClickI(item, tagPos, oddPos, sportName, matchid) {//item - clicked odd value
     var match = sportList[sportName][matchid];
-
- //   console.log(match.Odds[item].isClickable);
 
     var ClassDate = item.className.split(' ');
 

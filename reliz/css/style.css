@@ -106,9 +106,13 @@ table {
     display: block;
 }
 
+
+
 html {
     font-size: 10px;
     font-family: Arial;
+    min-height: 1000px;
+    min-width: 1000px;
 }
 
 .tab a {
@@ -406,6 +410,21 @@ input[type="checkbox"] {
     top: 0;
 }
 
+.sidebar-tab-sport {
+    display: block;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    padding-left: .6rem;
+    box-sizing: border-box;
+    width: 11.3rem;
+    background: #1b1b1b;
+    color: #fff;
+    font-size: 1.4rem;
+    text-decoration: none;
+    position: relative;
+}
+
 .current-language {
     cursor: pointer;
     display: -webkit-box;
@@ -548,6 +567,22 @@ input[type="checkbox"] {
     width: 1.6rem;
     height: 1.6rem;
     display: block;
+}
+
+
+
+.sports-item-country-header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 4rem;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
 .fake-checkbox-checked {
@@ -4346,7 +4381,7 @@ td.match-table-time {
     color: #fff;
     font-size: 1.3rem;
     background: #b5b5b5;
-    display: block;
+
     cursor: pointer;
 }
 
@@ -4879,6 +4914,14 @@ td.match-table-time {
     display: none;
 }
 
+
+
+.bet-slip-system.display-none {
+    display: none;
+}
+
+
+
 .bet-slip-menu-item-submenu li a {
     display: block;
     width: 100%;
@@ -4935,6 +4978,12 @@ td.match-table-time {
 }
 
 
+
+
+
+
+
+
 .bet-slip-limit-message.display-none {
  display: none;
 }
@@ -4945,6 +4994,11 @@ td.match-table-time {
 
 .bet-slip-bottom-stake{
  display: none;
+}
+
+
+.bet-slip-bottom-stake.display-none{
+    display: none;
 }
 
 .bet-slip-bottom-stake.display-block{

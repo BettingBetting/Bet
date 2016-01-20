@@ -37,24 +37,26 @@ $(document).ready(function () {
     $('.results-item').click(function () {
         $(this).toggleClass('active');
     });
+
+
+
+
     
     $('#single-advanced').click(function () {
-//        $(".bet-slip-stake-name-input").fadeToggle(this.checked);
-       // $('.bet-slip-overall').toggleClass('hidden');
-    });
+       // $(".bet-slip-stake-name-input").fadeToggle(this.checked);
+       $('.bet-slip-single').find('.bet-slip-overall').toggleClass('hidden');
 
+    });
 
     $('#multiple-advanced').click(function () {
-        $(".bet-slip-stake-name-input").fadeToggle(this.checked);
-        $('.bet-slip-overall').toggleClass('bottom');
+        //$(".bet-slip-stake-name-input").fadeToggle(this.checked);
+        $('.bet-slip-multiple').find('.bet-slip-overall').toggleClass('hidden');
     });
-
-
 
 
     $('#system-advanced').click(function () {
-        $(".bet-slip-stake-name-input").fadeToggle(this.checked);
-        $('.bet-slip-overall').toggleClass('hidden');
+       // $(".bet-slip-stake-name-input").fadeToggle(this.checked);
+        $('.bet-slip-system').find('.bet-slip-overall').toggleClass('hidden');
     });
 
 
@@ -78,6 +80,49 @@ $(document).ready(function () {
 
     });
 
+
+
+
+
+    if( $('.bet-slip-menu-item.single')) {
+        $("#single-same-stake").prop("checked", false);
+        $('#single-same-stake').click(function () {
+
+            if ($('#single-same-stake').prop('checked')) {
+
+                $('.bet-slip-single').find('.bet-slip-bottom-stake').addClass('display-block');
+                $('.bet-slip-single').find('.bet-slip-bottom-stake').toggleClass('hidden');
+                $('.bet-slip-single').find('.bet-slip-details-stakes').toggleClass('hidden');
+                $('.bet-slip-single').find('.bet-slip-item-link').toggleClass('bottom');
+            }
+
+            else {
+                $('.bet-slip-single').find('.bet-slip-details-stakes').toggleClass('hidden');
+                $('.bet-slip-single').find('.bet-slip-bottom-stake').removeClass('display-block');
+                $('.bet-slip-single').find('.bet-slip-item-link').toggleClass('bottom');
+                $('.bet-slip-single').find('.bet-slip-bottom-stake').addClass('display-block');
+                $('.bet-slip-single').find('.bet-slip-bottom-stake').toggleClass('hidden');
+
+            }
+        });
+    }
+
+
+    if( $('.bet-slip-menu-item.system')) {
+        $('#system-bankers').click(function () {
+            if ($('#system-bankers').prop('checked')) {
+                $('.bet-slip-item-header-logo').addClass('active');
+            }else {
+                $('.bet-slip-item-header-logo').removeClass('active');
+            }
+        });
+    }
+
+
+
+
+
+
     $(document).ready(function(){
         $('.bet-slip-bottom-stake-input').keyup( function() {
             var $this = $(this);
@@ -89,28 +134,6 @@ $(document).ready(function () {
     $('.bet-slip-header-button').click(function() {
         $('.bet-slip-wrapper').slideToggle();
     });
-
-
-
-if( $('.bet-slip-menu-item.single')) {
-
-    $('#single-same-stake').click(function () {
-
-        if ($('#single-advanced').prop('checked')) {
-            $('.bet-slip-single').find('.bet-slip-bottom-stake').toggleClass('hidden');
-            $('.bet-slip-single').find('.bet-slip-details-stakes').toggleClass('hidden');
-            $('.bet-slip-single').find('.bet-slip-item-link').toggleClass('bottom');
-        }
-
-        else {
-            $('.bet-slip-single').find('.bet-slip-bottom-stake').toggleClass('hidden');
-            $('.bet-slip-single').find('.bet-slip-details-stakes').toggleClass('hidden');
-            $('.bet-slip-single').find('.bet-slip-item-link').toggleClass('bottom');
-            $('.bet-slip-single').find('.bet-slip-overall').addClass('hidden');
-        }
-    });
-}
-
 
 
 

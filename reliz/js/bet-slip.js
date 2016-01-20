@@ -81,6 +81,7 @@ function changeSingleBsItem(clickedOdd, clickedOddD, match, oddPos, tagPos){
         addMultipleBsItem(bsObject, matchid);
         addSystemBsItem(bsObject, matchid);
        AddStyleBetSlipMenuItemSingleToo();
+
     }
 
 
@@ -88,18 +89,31 @@ function changeSingleBsItem(clickedOdd, clickedOddD, match, oddPos, tagPos){
 
 
 function   AddStyleRemoveSingleBsItem(){
-    document.getElementById("bsSingleBtn").style.display = "block";
-    $('.bet-slip-menu-item').removeClass('active');
-    document.querySelector(".bet-slip-not-start").style.display = "block";
-    $('.bet-slip-menu-item.single').addClass('hidden');
-    $('.bet-slip-menu-item.single').parents('.bet-slip-wrapper').find('.bet-slip-checkboxes').removeClass('display-block');
-    $('.bet-slip-menu-item').parents('.bet-slip-wrapper').find('.bet-slip-checkboxes').removeClass('display-block');
-    $('.bet-slip-overall-item').removeClass('display-block');
-    $('.bet-slip-menu-item.single').parents('.bet-slip-wrapper').find('.bet-slip-bottom-stake').removeClass('display-block');
-    $('.bet-slip-menu-item.single').parents('.bet-slip-wrapper').find('.bet-slip-bottom-top').addClass('hidden');
+
+    if ($('#single-same-stake').prop('checked')) {
+        $("#single-same-stake").prop("checked", false);
+        $('.bet-slip-details-stakes').removeClass('hidden');
+        $('.bet-slip-single').find('.bet-slip-bottom-stake').addClass('hidden');
+    }
+
+    document.querySelector(".bet-slip-single").style.display = "block";
+    document.getElementById("bsSingleBtn").style.display = "none";
+    $(".bet-slip-system").removeAttr("style");
+    $(".bet-slip-multiple").removeAttr("style");
+    $("#single-advanced").prop("checked", false);
+    $("#multiple-advanced").prop("checked", false);
+    $("#system-advanced").prop("checked", false);
+    $("#system-bankers").prop("checked", false);
+    $(".bet-slip-menu-item").removeClass('active');
+    $('.bet-slip-menu-item').parents('.bet-slip-wrapper').find('.bet-slip-bottom-stake').removeClass('display-block');
     $('.bet-slip-menu-item.single').parents('.bet-slip-wrapper').find('.bet-slip-overall').addClass('hidden');
-    $('.bet-slip-menu-item.single').parents('.bet-slip-wrapper').find('.bet-slip-limit-message').removeClass('display-block');
+    $('.bet-slip-menu-item.single').parents('.bet-slip-wrapper').find('.bet-slip-checkboxes').removeClass('display-block');
+    document.querySelector(".bet-slip-not-start").style.display = "block";
 }
+
+
+
+
 
 
 
@@ -107,15 +121,15 @@ function   AddStyleRemoveSingleBsItem(){
 function AddStyleBetSlipMenuItemSingleToo(){
     document.getElementById("bsSingleBtn").style.display = "block";
     document.querySelector(".bet-slip-not-start").style.display = "none";
-    $('.bet-slip-menu-item').removeClass('active');
     $('.bet-slip-menu-item.single').addClass('active');
+
+
     $('.bet-slip-menu-item.single').removeClass('hidden');
     $('.bet-slip-menu-item.single').parents('.bet-slip-wrapper').find('.bet-slip-checkboxes').addClass('display-block');
-    $('.bet-slip-overall-item').addClass('display-block');
-    $('.bet-slip-menu-item.single').parents('.bet-slip-wrapper').find('.bet-slip-bottom-stake').addClass('display-block');
-    $('.bet-slip-menu-item.single').parents('.bet-slip-wrapper').find('.bet-slip-bottom-top').removeClass('hidden');
+    $('.bet-slip-menu-item').parents('.bet-slip-wrapper').find('.bet-slip-bottom-stake').addClass('display-block');
     $('.bet-slip-menu-item.single').parents('.bet-slip-wrapper').find('.bet-slip-overall').addClass('hidden');
     $('.bet-slip-menu-item.single').parents('.bet-slip-wrapper').find('.bet-slip-limit-message').addClass('display-block');
+
 }
 
 
@@ -410,6 +424,7 @@ function removeSingleBsItem(id, bsObject){
 
     if( bsSingleList.size==0){
         AddStyleRemoveSingleBsItem();
+
     }
 
 }
@@ -437,6 +452,7 @@ function removeSingleBsItemFromList(id){
     bsSystemItem.remove();
 
 
+
 }
 
 
@@ -456,6 +472,7 @@ function setBsBtnVisibility(){
         $('#bsMultipleBtn').removeClass('hidden');
         $('#bsSystemBtn').removeClass('hidden');
     }
+
 
 }
 
